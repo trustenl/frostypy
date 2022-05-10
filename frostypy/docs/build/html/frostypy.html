@@ -1,0 +1,1963 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="English">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>frostypy package &#8212; frostypy 0.0.18 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="frostypy" href="modules.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="frostypy"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">frostypy 0.0.18 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">frostypy</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="frostypy-package">
+<h1>frostypy package<a class="headerlink" href="#frostypy-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-frostypy.core">
+<span id="frostypy-core-module"></span><h2>frostypy.core module<a class="headerlink" href="#module-frostypy.core" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#dimensionless-numbers" id="id5">Dimensionless Numbers</a></li>
+<li><a class="reference internal" href="#dimensions" id="id6">Dimensions</a></li>
+</ul>
+</div>
+<div class="section" id="dimensionless-numbers">
+<h3><a class="toc-backref" href="#id5">Dimensionless Numbers</a><a class="headerlink" href="#dimensionless-numbers" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="frostypy.core.Fourier">
+<code class="descclassname">frostypy.core.</code><code class="descname">Fourier</code><span class="sig-paren">(</span><em>alpha_a</em>, <em>t</em>, <em>L</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.core.Fourier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Fourier number</p>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>(a + b)^2 = a^2 + 2ab + b^2</dd>
+</dl>
+<dl class="docutils">
+<dt>alpha_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Thermal Diffusivity [m^2/s]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>plate length [m]</dd>
+</dl>
+<p>Fo : Fourier number [-]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.core.Hatta">
+<code class="descclassname">frostypy.core.</code><code class="descname">Hatta</code><span class="sig-paren">(</span><em>x_s</em>, <em>lamb</em>, <em>t</em>, <em>epsilon</em>, <em>D</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.core.Hatta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Hatta number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">rho_f</span> <span class="o">=</span> <span class="mi">207</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.266</span><span class="o">*</span><span class="n">T_f</span> <span class="o">-</span> <span class="mf">0.0615</span><span class="o">*</span><span class="n">T_w</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>x_s <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost thickness (m)</dd>
+<dt>lamb <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Desublimation Coefficient (1/s)</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time (s)</dd>
+<dt>epsilon <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Porosity (-)</dd>
+<dt>D <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Diffusivity of water vapor in air (m^2/s)</dd>
+</dl>
+<p>Ha : Hatta number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.core.Jakob">
+<code class="descclassname">frostypy.core.</code><code class="descname">Jakob</code><span class="sig-paren">(</span><em>cp</em>, <em>i_sv</em>, <em>Tsat_a</em>, <em>T_w</em>, <em>omega_a</em>, <em>omega_sat_w</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.core.Jakob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Jakob number</p>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>lambda = frac(Cp/isv) * (Tsat_a - T_w)/(omega_a - omega_sat_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>i_sv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Latent heat of sublimation [J/kg]</dd>
+<dt>Cp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Specific heat of dry air [J/kg*K]</dd>
+<dt>Tsat_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Saturation temperature of air [C]</dd>
+<dt>T_w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate surface temperature [C]</dd>
+<dt>omega_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Humidity Ratio [kg_vapor/kg_total]</dd>
+<dt>omega_sat_w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Humidity ratio &#64; Tsat</dd>
+</dl>
+<p>rho : Density of frost (kg/m^3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.core.Lewis">
+<code class="descclassname">frostypy.core.</code><code class="descname">Lewis</code><span class="sig-paren">(</span><em>D</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.core.Lewis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Lewis number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Le</span> <span class="o">=</span> <span class="n">D</span> <span class="o">/</span> <span class="n">alpha</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>D <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Diffusion coefficient of water-vapor in the air (m^2/s)</dd>
+<dt>alpha <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Thermal diffusivity of air (m^2/s)</dd>
+</dl>
+<p>Ha : Hatta number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.core.Nusselt">
+<code class="descclassname">frostypy.core.</code><code class="descname">Nusselt</code><span class="sig-paren">(</span><em>h</em>, <em>L</em>, <em>k_a</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.core.Nusselt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Nusselt number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nu</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">L</span> <span class="o">/</span> <span class="n">k_a</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>h <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Heat transfer coefficient [W/m^2*s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate length [m]</dd>
+<dt>k_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Thermal conductivity of Air [W/mK]</dd>
+</dl>
+<p>Nu : Nusselt number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.core.Reynolds">
+<code class="descclassname">frostypy.core.</code><code class="descname">Reynolds</code><span class="sig-paren">(</span><em>V</em>, <em>L</em>, <em>nu</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.core.Reynolds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Reynolds number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Re</span> <span class="o">=</span> <span class="n">V</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">nu</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>V <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Velocity [m/s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate length [m]</dd>
+<dt>nu <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Dynamic Viscosity [m^2/s]</dd>
+</dl>
+<p>Re : Reynolds number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.core.Sherwood">
+<code class="descclassname">frostypy.core.</code><code class="descname">Sherwood</code><span class="sig-paren">(</span><em>h_m</em>, <em>L</em>, <em>rho_a</em>, <em>D_a</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.core.Sherwood" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the Sherwood number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sh</span> <span class="o">=</span> <span class="n">h_m</span> <span class="o">*</span> <span class="n">L</span> <span class="o">/</span> <span class="n">rho_a</span> <span class="o">*</span> <span class="n">D_a</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>h_m <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Mass transfer coefficient [kg/m^2*s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate length [m]</dd>
+<dt>rho_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Density of Air [kg/m^3]</dd>
+<dt>D_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Mass Diffusionn Coefficient [m^2/s]</dd>
+</dl>
+<p>Sh : Sherwood number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="dimensions">
+<h3><a class="toc-backref" href="#id6">Dimensions</a><a class="headerlink" href="#dimensions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.core.</code><code class="descname">Fourier</code><span class="sig-paren">(</span><em>alpha_a</em>, <em>t</em>, <em>L</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the Fourier number</p>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>(a + b)^2 = a^2 + 2ab + b^2</dd>
+</dl>
+<dl class="docutils">
+<dt>alpha_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Thermal Diffusivity [m^2/s]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>plate length [m]</dd>
+</dl>
+<p>Fo : Fourier number [-]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.core.</code><code class="descname">Hatta</code><span class="sig-paren">(</span><em>x_s</em>, <em>lamb</em>, <em>t</em>, <em>epsilon</em>, <em>D</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the Hatta number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">rho_f</span> <span class="o">=</span> <span class="mi">207</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.266</span><span class="o">*</span><span class="n">T_f</span> <span class="o">-</span> <span class="mf">0.0615</span><span class="o">*</span><span class="n">T_w</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>x_s <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost thickness (m)</dd>
+<dt>lamb <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Desublimation Coefficient (1/s)</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time (s)</dd>
+<dt>epsilon <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Porosity (-)</dd>
+<dt>D <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Diffusivity of water vapor in air (m^2/s)</dd>
+</dl>
+<p>Ha : Hatta number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.core.</code><code class="descname">Jakob</code><span class="sig-paren">(</span><em>cp</em>, <em>i_sv</em>, <em>Tsat_a</em>, <em>T_w</em>, <em>omega_a</em>, <em>omega_sat_w</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the Jakob number</p>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>lambda = frac(Cp/isv) * (Tsat_a - T_w)/(omega_a - omega_sat_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>i_sv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Latent heat of sublimation [J/kg]</dd>
+<dt>Cp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Specific heat of dry air [J/kg*K]</dd>
+<dt>Tsat_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Saturation temperature of air [C]</dd>
+<dt>T_w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate surface temperature [C]</dd>
+<dt>omega_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Humidity Ratio [kg_vapor/kg_total]</dd>
+<dt>omega_sat_w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Humidity ratio &#64; Tsat</dd>
+</dl>
+<p>rho : Density of frost (kg/m^3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.core.</code><code class="descname">Lewis</code><span class="sig-paren">(</span><em>D</em>, <em>alpha</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the Lewis number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Le</span> <span class="o">=</span> <span class="n">D</span> <span class="o">/</span> <span class="n">alpha</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>D <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Diffusion coefficient of water-vapor in the air (m^2/s)</dd>
+<dt>alpha <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Thermal diffusivity of air (m^2/s)</dd>
+</dl>
+<p>Ha : Hatta number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.core.</code><code class="descname">Nusselt</code><span class="sig-paren">(</span><em>h</em>, <em>L</em>, <em>k_a</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the Nusselt number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nu</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">L</span> <span class="o">/</span> <span class="n">k_a</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>h <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Heat transfer coefficient [W/m^2*s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate length [m]</dd>
+<dt>k_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Thermal conductivity of Air [W/mK]</dd>
+</dl>
+<p>Nu : Nusselt number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.core.</code><code class="descname">Reynolds</code><span class="sig-paren">(</span><em>V</em>, <em>L</em>, <em>nu</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the Reynolds number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Re</span> <span class="o">=</span> <span class="n">V</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">nu</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>V <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Velocity [m/s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate length [m]</dd>
+<dt>nu <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Dynamic Viscosity [m^2/s]</dd>
+</dl>
+<p>Re : Reynolds number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.core.</code><code class="descname">Sherwood</code><span class="sig-paren">(</span><em>h_m</em>, <em>L</em>, <em>rho_a</em>, <em>D_a</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the Sherwood number
+..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sh</span> <span class="o">=</span> <span class="n">h_m</span> <span class="o">*</span> <span class="n">L</span> <span class="o">/</span> <span class="n">rho_a</span> <span class="o">*</span> <span class="n">D_a</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>h_m <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Mass transfer coefficient [kg/m^2*s]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate length [m]</dd>
+<dt>rho_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Density of Air [kg/m^3]</dd>
+<dt>D_a <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Mass Diffusionn Coefficient [m^2/s]</dd>
+</dl>
+<p>Sh : Sherwood number (-)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-frostypy.density">
+<span id="frostypy-density-module"></span><h2>frostypy.density module<a class="headerlink" href="#module-frostypy.density" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="id1">
+<ul class="simple">
+<li><a class="reference internal" href="#density-correlations" id="id7">Density Correlations</a></li>
+</ul>
+</div>
+<div class="section" id="density-correlations">
+<h3><a class="toc-backref" href="#id7">Density Correlations</a><a class="headerlink" href="#density-correlations" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="frostypy.density.Hayashi">
+<code class="descclassname">frostypy.density.</code><code class="descname">Hayashi</code><span class="sig-paren">(</span><em>Tf</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Hayashi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost density, rho_f, according to the Hayashi correlation (1977)
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><p>-15 &lt;= Tw  &lt;= -5  [C],
+16  &lt;= Ta  &lt;= 22  [C], 
+0.5 &lt;= psi &lt;= 0.8 [-],</p>
+<blockquote>
+<div>u_a  = 0.7 [m/s]</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 207*exp(0.266*T_f - 0.0615*T_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost surface temperature [C]</dd>
+</dl>
+<p>rho_f : Frost density (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hayashi, Y., Aoki, A., Hori, K., 1977. Study of frost properties correlating
+with frost formation types. J. Heat Transfer 99, 239-245.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.modified_Hayashi">
+<code class="descclassname">frostypy.density.</code><code class="descname">modified_Hayashi</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tw</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.modified_Hayashi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost density, rho_f, according to the modified Hayashi
+correlation () for a flat plate, which is valid for:</p>
+<blockquote>
+<div><p>-15 &lt;= Tw  &lt;= -5  [C],
+16  &lt;= Ta  &lt;= 22  [C], 
+0.5 &lt;= psi &lt;= 0.8 [-],</p>
+<blockquote>
+<div>u_a = 0.7 [m/s]</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 207*exp(0.266*T_f - 0.0615*T_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost surface temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate surface temperature [C]</dd>
+</dl>
+<p>rho : Frost density (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Hermes_2009">
+<code class="descclassname">frostypy.density.</code><code class="descname">Hermes_2009</code><span class="sig-paren">(</span><em>lamb</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Hermes_2009" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the density of frost according to the Hermes correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],
+16 &lt; Ta &lt; 22 [C], 
+0.5 &lt; psi &lt; 0.8 [-],
+u_a = 0.7 [m/s]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 207*exp(0.266*T_f - 0.0615*T_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>lamb <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>modified Jakob number [-]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>rho : Density of frost (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hermes, C.J.L., Piucco, R.O., Melo, C., Barbosa Jr., J.R., 2009. A
+study of frost growth and densification on flat surfaces. Exp. Therm. Fluid
+Sci. 33, 371-379.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Hermes_2014">
+<code class="descclassname">frostypy.density.</code><code class="descname">Hermes_2014</code><span class="sig-paren">(</span><em>Cp</em>, <em>Tsata</em>, <em>Tw</em>, <em>hsub</em>, <em>wa</em>, <em>wsatw</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Hermes_2014" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the density of frost according to the Hermes correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],
+16 &lt; Ta &lt; 22 [C], 
+0.05 &lt; psi &lt; 0.8 [%],
+0 &lt; t &lt; 120 [min]
+u_a = 0.7 [m/s]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 2.2 * ((Cp*(Tsata - Tw)) / (hsub*(wa - wsatw)))**-1.5* t**0.5</dd>
+</dl>
+<dl class="docutils">
+<dt>Cp <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Specific Heat [J/kg*K]</dd>
+<dt>Tsata <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Saturation Temperature of Air [K]</dd>
+</dl>
+<p>Tw : float</p>
+<p>hsub : float</p>
+<dl class="docutils">
+<dt>wa <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of air [%]</dd>
+<dt>wsatw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>[%]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m**3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hermes, C. A semi-empirical correlation for the frost density</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Hosoda">
+<code class="descclassname">frostypy.density.</code><code class="descname">Hosoda</code><span class="sig-paren">(</span><em>Tw</em>, <em>Va</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Hosoda" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost density according to the Hosoda and Uzuhashi correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 340*|Tw|**-0.445 + 85*Va</dd>
+</dl>
+<dl class="docutils">
+<dt>Va <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Air Velocity [m/s]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate surface temperature [C]</dd>
+</dl>
+<p>rho_f : Frost density [kg/m**3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hosoda T, Uzuhashi H. Effects of frost on the heat transfer coefficient.
+Hitachi Reivew 1967;16(6):254-9.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Kandula">
+<code class="descclassname">frostypy.density.</code><code class="descname">Kandula</code><span class="sig-paren">(</span><em>rho_i</em>, <em>Tf</em>, <em>Tw</em>, <em>Tm</em>, <em>Re</em>, <em>Rec</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Kandula" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates frost density according to the Kandula correlation (2012)
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-20 &lt; Tw &lt; -5  [C],
+10  &lt; Ta &lt; 22  [C], 
+0.7 &lt; v  &lt; 2.5 [m/s],
+50  &lt; RH &lt; 80  [%]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd><dl class="first last docutils">
+<dt>rho_f = (rho_i * (0.5*((Tf-Tw)/(Tm-Tw)) </dt>
+<dd><ul class="first last simple">
+<li>numpy.exp(-(0.375+1.5*((Tf-Tw)/(Tm-Tw))))</li>
+<li>(1 - numpy.sqrt(Re/Rec))) )</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_i <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Ice Density [kg/m^3]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of frost  [K]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of vapor [K]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of  [K]</dd>
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Rec <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Critical Reynolds number [-]</dd>
+</dl>
+<p>rho_f : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Kandula, M., 2011. Correlation of water frost porosity in laminar 
+flow over flat surfaces. Special Top. Rev. Porous Media - Int. J. 3, 79-87</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Leoni">
+<code class="descclassname">frostypy.density.</code><code class="descname">Leoni</code><span class="sig-paren">(</span><em>Re</em>, <em>Ja</em>, <em>ww</em>, <em>wa</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Leoni" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the density of frost according to the Leoni et. al (2020) correlation
+for a flat plate, which is valid for: ???</p>
+<blockquote>
+<div>-35 &lt; Tw &lt; -15 [C],
+-5 &lt; Ta &lt; 15 [C], 
+1.0 &lt; v &lt; 2.5 [m/s]
+0.00322 &lt; w &lt; 0.00847 [kg_v/kg_a]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 5.47*Re**0.16 * Ja**0.29 * (ww/wa)**0.61 * t**0.34</dd>
+</dl>
+<dl class="docutils">
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Ja <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Jakob number [-]</dd>
+<dt>ww <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of [%]</dd>
+<dt>wa <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of air [%]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Mao">
+<code class="descclassname">frostypy.density.</code><code class="descname">Mao</code><span class="sig-paren">(</span><em>Re</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Mao" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost density, rho_f, according to the Mao et. al (1992) correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15  &lt; Tw &lt; -15  [C],
+15   &lt; Ta &lt; 23   [C], 
+1.15 &lt; v  &lt; 2.67 [m/s]</div></blockquote>
+<p>..math:</p>
+<dl class="docutils">
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Ja <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Jakob number [-]</dd>
+<dt>ww <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of [%]</dd>
+<dt>wa <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of air [%]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>rho_f : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Mao, Y., Besant, R.W., Rezkallah, K.S., 1992. Measurement and correlations
+of frost properties with airflow over a flat plate. ASHRAE Trans. 98, 65-77.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Sommers">
+<code class="descclassname">frostypy.density.</code><code class="descname">Sommers</code><span class="sig-paren">(</span><em>lamb</em>, <em>sigma</em>, <em>RH</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Sommers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the density of frost according to the Sommers et al. correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],
+16 &lt; Ta &lt; 22 [C], 
+0.5 &lt; psi &lt; 0.8 [-],
+u_a = 0.7 [m/s]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = (2.16*lamb**(-3/2) * t**0.5 * (45/numpy.log(sigma))**0.95 * (0.8/RH)**0.60)</dd>
+</dl>
+<dl class="docutils">
+<dt>lamb <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>modified Jakob number [-]</dd>
+<dt>sigma <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Contact Angle [degrees]</dd>
+<dt>RH <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>relative humidity [%]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>rho : Frost density (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.density.Yang">
+<code class="descclassname">frostypy.density.</code><code class="descname">Yang</code><span class="sig-paren">(</span><em>rho_i</em>, <em>Re</em>, <em>Fo</em>, <em>wa</em>, <em>Ta</em>, <em>Ttp</em>, <em>Tw</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.density.Yang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the density of frost according to the Yang and Lee correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-35     &lt; Tw &lt; -15     [C],
+-5      &lt; Ta &lt; 15      [C], 
+1.0     &lt; v  &lt; 2.5     [m/s],
+0.00322 &lt; w  &lt; 0.00847 [kg_v/kg_a]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 2.2 * ((Cp*(Tsata - Tw)) / (hsub*(wa - wsatw)))**-1.5* t**0.5</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_i <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Ice Density [kg/m^3]</dd>
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Fo <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Fourier number [-]</dd>
+<dt>wa <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of air [%]</dd>
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of air  [K]</dd>
+<dt>Ttp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Triple-point of water</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of vapor [K]</dd>
+</dl>
+<p>rho : Frost density [kg/m**3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Yang, D.-K., Lee, K-S., 2004. Dimensionless correlations of frost
+properties on a cold plate. Int J. Refrigeration 27 (1), 89-96.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Hayashi</code><span class="sig-paren">(</span><em>Tf</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost density, rho_f, according to the Hayashi correlation (1977)
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><p>-15 &lt;= Tw  &lt;= -5  [C],
+16  &lt;= Ta  &lt;= 22  [C], 
+0.5 &lt;= psi &lt;= 0.8 [-],</p>
+<blockquote>
+<div>u_a  = 0.7 [m/s]</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 207*exp(0.266*T_f - 0.0615*T_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost surface temperature [C]</dd>
+</dl>
+<p>rho_f : Frost density (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hayashi, Y., Aoki, A., Hori, K., 1977. Study of frost properties correlating
+with frost formation types. J. Heat Transfer 99, 239-245.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">modified_Hayashi</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tw</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost density, rho_f, according to the modified Hayashi
+correlation () for a flat plate, which is valid for:</p>
+<blockquote>
+<div><p>-15 &lt;= Tw  &lt;= -5  [C],
+16  &lt;= Ta  &lt;= 22  [C], 
+0.5 &lt;= psi &lt;= 0.8 [-],</p>
+<blockquote>
+<div>u_a = 0.7 [m/s]</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 207*exp(0.266*T_f - 0.0615*T_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost surface temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate surface temperature [C]</dd>
+</dl>
+<p>rho : Frost density (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Hermes_2009</code><span class="sig-paren">(</span><em>lamb</em>, <em>t</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the density of frost according to the Hermes correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],
+16 &lt; Ta &lt; 22 [C], 
+0.5 &lt; psi &lt; 0.8 [-],
+u_a = 0.7 [m/s]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 207*exp(0.266*T_f - 0.0615*T_w)</dd>
+</dl>
+<dl class="docutils">
+<dt>lamb <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>modified Jakob number [-]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>rho : Density of frost (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hermes, C.J.L., Piucco, R.O., Melo, C., Barbosa Jr., J.R., 2009. A
+study of frost growth and densification on flat surfaces. Exp. Therm. Fluid
+Sci. 33, 371-379.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Hermes_2014</code><span class="sig-paren">(</span><em>Cp</em>, <em>Tsata</em>, <em>Tw</em>, <em>hsub</em>, <em>wa</em>, <em>wsatw</em>, <em>t</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the density of frost according to the Hermes correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],
+16 &lt; Ta &lt; 22 [C], 
+0.05 &lt; psi &lt; 0.8 [%],
+0 &lt; t &lt; 120 [min]
+u_a = 0.7 [m/s]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 2.2 * ((Cp*(Tsata - Tw)) / (hsub*(wa - wsatw)))**-1.5* t**0.5</dd>
+</dl>
+<dl class="docutils">
+<dt>Cp <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Specific Heat [J/kg*K]</dd>
+<dt>Tsata <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Saturation Temperature of Air [K]</dd>
+</dl>
+<p>Tw : float</p>
+<p>hsub : float</p>
+<dl class="docutils">
+<dt>wa <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of air [%]</dd>
+<dt>wsatw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>[%]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m**3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hermes, C. A semi-empirical correlation for the frost density</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Hosoda</code><span class="sig-paren">(</span><em>Tw</em>, <em>Va</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost density according to the Hosoda and Uzuhashi correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 340*|Tw|**-0.445 + 85*Va</dd>
+</dl>
+<dl class="docutils">
+<dt>Va <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Air Velocity [m/s]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate surface temperature [C]</dd>
+</dl>
+<p>rho_f : Frost density [kg/m**3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hosoda T, Uzuhashi H. Effects of frost on the heat transfer coefficient.
+Hitachi Reivew 1967;16(6):254-9.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Kandula</code><span class="sig-paren">(</span><em>rho_i</em>, <em>Tf</em>, <em>Tw</em>, <em>Tm</em>, <em>Re</em>, <em>Rec</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates frost density according to the Kandula correlation (2012)
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-20 &lt; Tw &lt; -5  [C],
+10  &lt; Ta &lt; 22  [C], 
+0.7 &lt; v  &lt; 2.5 [m/s],
+50  &lt; RH &lt; 80  [%]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd><dl class="first last docutils">
+<dt>rho_f = (rho_i * (0.5*((Tf-Tw)/(Tm-Tw)) </dt>
+<dd><ul class="first last simple">
+<li>numpy.exp(-(0.375+1.5*((Tf-Tw)/(Tm-Tw))))</li>
+<li>(1 - numpy.sqrt(Re/Rec))) )</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_i <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Ice Density [kg/m^3]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of frost  [K]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of vapor [K]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of  [K]</dd>
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Rec <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Critical Reynolds number [-]</dd>
+</dl>
+<p>rho_f : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Kandula, M., 2011. Correlation of water frost porosity in laminar 
+flow over flat surfaces. Special Top. Rev. Porous Media - Int. J. 3, 79-87</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Leoni</code><span class="sig-paren">(</span><em>Re</em>, <em>Ja</em>, <em>ww</em>, <em>wa</em>, <em>t</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the density of frost according to the Leoni et. al (2020) correlation
+for a flat plate, which is valid for: ???</p>
+<blockquote>
+<div>-35 &lt; Tw &lt; -15 [C],
+-5 &lt; Ta &lt; 15 [C], 
+1.0 &lt; v &lt; 2.5 [m/s]
+0.00322 &lt; w &lt; 0.00847 [kg_v/kg_a]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 5.47*Re**0.16 * Ja**0.29 * (ww/wa)**0.61 * t**0.34</dd>
+</dl>
+<dl class="docutils">
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Ja <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Jakob number [-]</dd>
+<dt>ww <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of [%]</dd>
+<dt>wa <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of air [%]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Sommers</code><span class="sig-paren">(</span><em>lamb</em>, <em>sigma</em>, <em>RH</em>, <em>t</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the density of frost according to the Sommers et al. correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-15 &lt; Tw &lt; -5 [C],
+16 &lt; Ta &lt; 22 [C], 
+0.5 &lt; psi &lt; 0.8 [-],
+u_a = 0.7 [m/s]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = (2.16*lamb**(-3/2) * t**0.5 * (45/numpy.log(sigma))**0.95 * (0.8/RH)**0.60)</dd>
+</dl>
+<dl class="docutils">
+<dt>lamb <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>modified Jakob number [-]</dd>
+<dt>sigma <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Contact Angle [degrees]</dd>
+<dt>RH <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>relative humidity [%]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>rho : Frost density (kg/m**3)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.density.</code><code class="descname">Yang</code><span class="sig-paren">(</span><em>rho_i</em>, <em>Re</em>, <em>Fo</em>, <em>wa</em>, <em>Ta</em>, <em>Ttp</em>, <em>Tw</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the density of frost according to the Yang and Lee correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-35     &lt; Tw &lt; -15     [C],
+-5      &lt; Ta &lt; 15      [C], 
+1.0     &lt; v  &lt; 2.5     [m/s],
+0.00322 &lt; w  &lt; 0.00847 [kg_v/kg_a]</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>rho_f = 2.2 * ((Cp*(Tsata - Tw)) / (hsub*(wa - wsatw)))**-1.5* t**0.5</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_i <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Ice Density [kg/m^3]</dd>
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Fo <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Fourier number [-]</dd>
+<dt>wa <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity of air [%]</dd>
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of air  [K]</dd>
+<dt>Ttp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Triple-point of water</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Temperature of vapor [K]</dd>
+</dl>
+<p>rho : Frost density [kg/m**3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Yang, D.-K., Lee, K-S., 2004. Dimensionless correlations of frost
+properties on a cold plate. Int J. Refrigeration 27 (1), 89-96.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-frostypy.porosity">
+<span id="frostypy-porosity-module"></span><h2>frostypy.porosity module<a class="headerlink" href="#module-frostypy.porosity" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="id2">
+<ul class="simple">
+<li><a class="reference internal" href="#porosity" id="id8">Porosity</a></li>
+</ul>
+</div>
+<div class="section" id="porosity">
+<h3><a class="toc-backref" href="#id8">Porosity</a><a class="headerlink" href="#porosity" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="frostypy.porosity.Hermes">
+<code class="descclassname">frostypy.porosity.</code><code class="descname">Hermes</code><span class="sig-paren">(</span><em>rho_f</em>, <em>rho_i</em>, <em>rho_a</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.porosity.Hermes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness according to the Cremers &amp; Mehra correlation
+for a tube, which is valid for:</p>
+<blockquote>
+<div>Ta = 24 [C]
+Free convection
+9.2 &lt; w &lt; 15 [g/kg_a],
+45 &lt; psi &lt; 90 [%],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.20*t*(Tf - Tp)**0.4</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost Temperature [K]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Cold Plate Surface [K]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.porosity.</code><code class="descname">Hermes</code><span class="sig-paren">(</span><em>rho_f</em>, <em>rho_i</em>, <em>rho_a</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness according to the Cremers &amp; Mehra correlation
+for a tube, which is valid for:</p>
+<blockquote>
+<div>Ta = 24 [C]
+Free convection
+9.2 &lt; w &lt; 15 [g/kg_a],
+45 &lt; psi &lt; 90 [%],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.20*t*(Tf - Tp)**0.4</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost Temperature [K]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Cold Plate Surface [K]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-frostypy.thermal_conductivity">
+<span id="frostypy-thermal-conductivity-module"></span><h2>frostypy.thermal_conductivity module<a class="headerlink" href="#module-frostypy.thermal_conductivity" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="id3">
+<ul class="simple">
+<li><a class="reference internal" href="#thermal-conductivity" id="id9">Thermal Conductivity</a></li>
+</ul>
+</div>
+<div class="section" id="thermal-conductivity">
+<h3><a class="toc-backref" href="#id9">Thermal Conductivity</a><a class="headerlink" href="#thermal-conductivity" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="frostypy.thermal_conductivity.Lee">
+<code class="descclassname">frostypy.thermal_conductivity.</code><code class="descname">Lee</code><span class="sig-paren">(</span><em>rho_f</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thermal_conductivity.Lee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thermal conductivity, k_f, according to the Lee et. al
+correlation () for a flat plate, which is valid for: ???</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 21  [C],</div></blockquote>
+<p>1.3 &lt;= V  &lt; 5.3 [m/s],
+7.5 &lt;= w  &lt; 15  [g/kg_a],
+-30 &lt;= Tp &lt; -5  [C],
+0   &lt;= t  &lt; 200 [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>k_f = 0.132 + 3.13*10^-4*rho_f + 1.6*10**-7 * rho_f**2</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_f <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost density [kg/m^3]</dd>
+</dl>
+<p>k_f : Frost Thermal Conductivity [J/kg*K]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] K.S. Lee, T.H. Lee, W.S. Kim, Heat and Mass Transfer of parallel plate
+heat exchanger under frosting condition, Kor. J. Air-Cond. Refrig. Eng. 6(2)
+(1994) 155-165</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thermal_conductivity.Ostin">
+<code class="descclassname">frostypy.thermal_conductivity.</code><code class="descname">Ostin</code><span class="sig-paren">(</span><em>rho_f</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thermal_conductivity.Ostin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thermal conductivity, k_f, according to the Ostin
+&amp; Andersson correlation for parallel plates, which is valid for:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>20  &lt;= Ta &lt;= 21    [C],</dt>
+<dd>V  = 3     [m/s],</dd>
+</dl>
+<p>4.6 &lt;= w  &lt;= 10.50 [g/kg_a],
+-20 &lt;= Tp &lt;= -7    [C],
+0   &lt;= t  &lt;= 300   [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>k_f = -8.71*10**-3 +4.39*10**-4 * rho_f + 1.05*10**-6*rho_f**2</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_f <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost density [kg/m^3]</dd>
+</dl>
+<p>k_f : Frost Thermal Conductivity [J/kg*K]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Ostin R, Anderson S. Frost growth parameters in a forced air stream.
+Int J Heat Mass Transfer 1991;14(4/5):1009-17</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thermal_conductivity.Yonko">
+<code class="descclassname">frostypy.thermal_conductivity.</code><code class="descname">Yonko</code><span class="sig-paren">(</span><em>rho_f</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thermal_conductivity.Yonko" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thermal conductivity, k_f, according to the Yonko
+&amp; Sepsy correlation (1967) for a flat plate, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 21  [C],</div></blockquote>
+<p>1.3 &lt;= V  &lt; 5.3 [m/s],
+7.5 &lt;= w  &lt; 15  [g/kg_a],
+-30 &lt;= Tp &lt; -5  [C],
+0   &lt;= t  &lt; 200 [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>k_f = 0.014 + 0.00668*rho_f + 0.0001759*rho_f**2</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_f <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost density [kg/m^3]</dd>
+</dl>
+<p>k_f : Frost Thermal Conductivity [J/kg*K]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Yonko JD, Sepsy CF. An investigation of the thermal conductivity of 
+frost while forming on a flat horizontal plate. ASHRAE Transactions 1967;73(2):1.1-1.11</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thermal_conductivity.</code><code class="descname">Lee</code><span class="sig-paren">(</span><em>rho_f</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thermal conductivity, k_f, according to the Lee et. al
+correlation () for a flat plate, which is valid for: ???</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 21  [C],</div></blockquote>
+<p>1.3 &lt;= V  &lt; 5.3 [m/s],
+7.5 &lt;= w  &lt; 15  [g/kg_a],
+-30 &lt;= Tp &lt; -5  [C],
+0   &lt;= t  &lt; 200 [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>k_f = 0.132 + 3.13*10^-4*rho_f + 1.6*10**-7 * rho_f**2</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_f <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost density [kg/m^3]</dd>
+</dl>
+<p>k_f : Frost Thermal Conductivity [J/kg*K]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] K.S. Lee, T.H. Lee, W.S. Kim, Heat and Mass Transfer of parallel plate
+heat exchanger under frosting condition, Kor. J. Air-Cond. Refrig. Eng. 6(2)
+(1994) 155-165</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thermal_conductivity.</code><code class="descname">Ostin</code><span class="sig-paren">(</span><em>rho_f</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thermal conductivity, k_f, according to the Ostin
+&amp; Andersson correlation for parallel plates, which is valid for:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>20  &lt;= Ta &lt;= 21    [C],</dt>
+<dd>V  = 3     [m/s],</dd>
+</dl>
+<p>4.6 &lt;= w  &lt;= 10.50 [g/kg_a],
+-20 &lt;= Tp &lt;= -7    [C],
+0   &lt;= t  &lt;= 300   [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>k_f = -8.71*10**-3 +4.39*10**-4 * rho_f + 1.05*10**-6*rho_f**2</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_f <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost density [kg/m^3]</dd>
+</dl>
+<p>k_f : Frost Thermal Conductivity [J/kg*K]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Ostin R, Anderson S. Frost growth parameters in a forced air stream.
+Int J Heat Mass Transfer 1991;14(4/5):1009-17</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thermal_conductivity.</code><code class="descname">Yonko</code><span class="sig-paren">(</span><em>rho_f</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thermal conductivity, k_f, according to the Yonko
+&amp; Sepsy correlation (1967) for a flat plate, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 21  [C],</div></blockquote>
+<p>1.3 &lt;= V  &lt; 5.3 [m/s],
+7.5 &lt;= w  &lt; 15  [g/kg_a],
+-30 &lt;= Tp &lt; -5  [C],
+0   &lt;= t  &lt; 200 [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>k_f = 0.014 + 0.00668*rho_f + 0.0001759*rho_f**2</dd>
+</dl>
+<dl class="docutils">
+<dt>rho_f <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost density [kg/m^3]</dd>
+</dl>
+<p>k_f : Frost Thermal Conductivity [J/kg*K]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Yonko JD, Sepsy CF. An investigation of the thermal conductivity of 
+frost while forming on a flat horizontal plate. ASHRAE Transactions 1967;73(2):1.1-1.11</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-frostypy.thickness">
+<span id="frostypy-thickness-module"></span><h2>frostypy.thickness module<a class="headerlink" href="#module-frostypy.thickness" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="id4">
+<ul class="simple">
+<li><a class="reference internal" href="#frost-thickness" id="id10">Frost Thickness</a></li>
+</ul>
+</div>
+<div class="section" id="frost-thickness">
+<h3><a class="toc-backref" href="#id10">Frost Thickness</a><a class="headerlink" href="#frost-thickness" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="frostypy.thickness.Cremers_free">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Cremers_free</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tp</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Cremers_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness, z, according to the Cremers &amp; Mehra correlation
+for a tube, which is valid for:</p>
+<blockquote>
+<div>Ta = 24 [C]
+Free convection
+9.2 &lt;= w   &lt;= 15 [g/kg_a],
+45  &lt;= psi &lt;= 90 [%],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.20*t*(Tf - Tp)**0.4</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost Temperature [K]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Cold Plate Surface [K]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thickness.Cremers">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Cremers</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tp</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Cremers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness according to the Cremers &amp; Mehra correlation
+for a tube, which is valid for:</p>
+<blockquote>
+<div>-90 &lt;= Tp  &lt;= -60 [C],
+0   &lt;= t   &lt;= 600 [min],
+34  &lt;= psi &lt;= 53  [%],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.12*t*(Tf - Tp)**0.43</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost Temperature [K]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Cold Plate Surface [K]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Cremers CJ, Mehra VK. Frost formation on vertical cylinders in free
+convection. ASME Journal of Heat Transfer 1908;104(1):3-7</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thickness.Hermes_2012">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Hermes_2012</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Hermes_2012" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness according to Hermes et. al (2012) correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><p>5.3    &lt;= a1*(Ta-Tw) &lt;= 8.5    [C]
+0.0057 &lt;=   wa-ww    &lt;= 0.0090 [kg_v/kg_a]</p>
+<blockquote>
+<div>Re     &lt;= 3*10^7 [-]</div></blockquote>
+<p>29.3   &lt;=     Nu     &lt;= 40.6   [-]
+82     &lt;=   rho_f    &lt;= 318    [kg/m^3]
+0      &lt;=      t     &lt;= 120    [min]</p>
+</div></blockquote>
+<p>..math:</p>
+<dl class="docutils">
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate Temperature [C]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Melting-point Temperature of water-ice [C]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost Temperature [C]</dd>
+<dt>pv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Partial vapor pressure of the air [-]</dd>
+<dt>psat <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air [%]</dd>
+<dt>psatf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air at the frost surface temperature [-]</dd>
+<dt>kice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice thermal conductivity (kJ/kg*K)</dd>
+<dt>pice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice density (kg/m^3)</dd>
+</dl>
+<p>isv : float</p>
+<dl class="docutils">
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hermes, C.J., 2012. An analytical solution to the problem of frost growth
+and densification on flat surfaces. Int. J. Heat Mass Transf. 55 (23-24), 7346-7351.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thickness.Lee">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Lee</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Lee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness, z, according to the Lee (1997) correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Tw     = -15   [C],
+Ta     = 25    [C],</div></blockquote>
+<p>50   &lt;= RH    &lt;= 80    [%],
+6000 &lt;= Re    &lt;= 50000 [-],
+50   &lt;= rho_f &lt;= 400   [kg/m^3],
+0    &lt;= t     &lt;= 120   [min]</p>
+</div></blockquote>
+<p>..math:</p>
+<dl class="docutils">
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate Temperature [C]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Melting-point Temperature of water-ice [C]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost Temperature [C]</dd>
+<dt>pv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Partial vapor pressure of the air [-]</dd>
+<dt>psat <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air [%]</dd>
+<dt>psatf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air at the frost surface temperature [-]</dd>
+<dt>kice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice thermal conductivity (kJ/kg*K)</dd>
+<dt>pice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice density (kg/m^3)</dd>
+</dl>
+<p>isv : float</p>
+<dl class="docutils">
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Lee, K.-S., Kim, W.-S. Lee, T.-H., 1997. A one-dimensional model for 
+frost formation on a cold surface. Int. J. Heat Mass Transf. 40, 4359-4365.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thickness.Okoroafor">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Okoroafor</code><span class="sig-paren">(</span><em>b0</em>, <em>b1</em>, <em>t</em>, <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Okoroafor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thickness.Schneider">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Schneider</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tm</em>, <em>Tw</em>, <em>k_i</em>, <em>hsub</em>, <em>rho_i</em>, <em>t</em>, <em>p</em>, <em>pfsat</em>, <em>psat</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Schneider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness, z, according to Schneider et. al (1978) correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-30  &lt;= Tw &lt;= -5    [C],
+5    &lt;= Ta &lt;= 15    [C], 
+96   &lt;= RH &lt;- 99    [%],
+4000 &lt;= Re &lt;= 32000 [-],
+60   &lt;= t  &lt;= 480   [min]</div></blockquote>
+<p>..math:</p>
+<dl class="docutils">
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate Temperature [C]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Melting-point Temperature of water-ice [C]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost Temperature [C]</dd>
+<dt>pv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Partial vapor pressure of the air [-]</dd>
+<dt>psat <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air [%]</dd>
+<dt>psatf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air at the frost surface temperature [-]</dd>
+<dt>kice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice thermal conductivity (kJ/kg*K)</dd>
+<dt>pice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice density (kg/m^3)</dd>
+</dl>
+<p>isv : float</p>
+<dl class="docutils">
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>z : Frost thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Schneider, H.W., 1978. Equation of the growth rate of frost forming on
+cooled surfaces. Int. J. Heat Mass Trasnfer. 21 (8), 1019-1024.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thickness.Sengupta">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Sengupta</code><span class="sig-paren">(</span><em>d</em>, <em>Re</em>, <em>Pr</em>, <em>w</em>, <em>Fo</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Sengupta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness according to the Sengupta et al. correlation
+for a cylinder in cross-flow, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 29   [C]</div></blockquote>
+<p>1.5  &lt;= V &lt;= 4.4  [m/s]
+10.0 &lt;= w &lt;= 20.0 [g/kg_a]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.84 * d * Re**-0.15 * Pr**0.65 * (1+w)**0.71 * Fo**0.11</dd>
+</dl>
+<dl class="docutils">
+<dt>d <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>cylinder diameter [m]</dd>
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Pr <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Prandtl number [-]</dd>
+<dt>w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity [%]</dd>
+<dt>Fo <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Fourier number [-]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Segupta S, Sherif SA, Wong KV. Empirical heat transfer and frost thickness
+correlations during frost deposition on a cylinder in cross-flow in the 
+transient regime. Int J Energy Research 1998;615-24.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="frostypy.thickness.Yang">
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Yang</code><span class="sig-paren">(</span><em>Re</em>, <em>Fo</em>, <em>w</em>, <em>Ta</em>, <em>Ttp</em>, <em>Tp</em>, <em>L</em><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.thickness.Yang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the frost thickness according to the Yang et al. correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 21  [C],</div></blockquote>
+<p>1.3 &lt;= V  &lt; 5.3 [m/s],
+7.5 &lt;= w  &lt; 15  [g/kg_a],
+-30 &lt;= Tp &lt; -5  [C],
+0   &lt;= t  &lt; 200 [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 2.878 * (Re**0.193) * (Fo**0.573) * (w**1.738) * (T**-1.029)</dd>
+</dl>
+<dl class="docutils">
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Fo <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Fourier number [-]</dd>
+<dt>w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Absolute humidity [kg_w/kg_air]</dd>
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air temperature [C]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate temperature [C]</dd>
+<dt>Ttp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Triple point of water [C]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>plate length [m]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Yang, D.-K., Lee, K-S., 2004. Dimensionless correlations of frost
+properties on a cold plate. Int J. Refrigeration 27 (1), 89-96.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Cremers_free</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tp</em>, <em>t</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness, z, according to the Cremers &amp; Mehra correlation
+for a tube, which is valid for:</p>
+<blockquote>
+<div>Ta = 24 [C]
+Free convection
+9.2 &lt;= w   &lt;= 15 [g/kg_a],
+45  &lt;= psi &lt;= 90 [%],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.20*t*(Tf - Tp)**0.4</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost Temperature [K]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Cold Plate Surface [K]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] (insert here)</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Cremers</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tp</em>, <em>t</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness according to the Cremers &amp; Mehra correlation
+for a tube, which is valid for:</p>
+<blockquote>
+<div>-90 &lt;= Tp  &lt;= -60 [C],
+0   &lt;= t   &lt;= 600 [min],
+34  &lt;= psi &lt;= 53  [%],</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.12*t*(Tf - Tp)**0.43</dd>
+</dl>
+<dl class="docutils">
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>Frost Temperature [K]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Cold Plate Surface [K]</dd>
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>time [s]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Cremers CJ, Mehra VK. Frost formation on vertical cylinders in free
+convection. ASME Journal of Heat Transfer 1908;104(1):3-7</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Hermes_2012</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness according to Hermes et. al (2012) correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><p>5.3    &lt;= a1*(Ta-Tw) &lt;= 8.5    [C]
+0.0057 &lt;=   wa-ww    &lt;= 0.0090 [kg_v/kg_a]</p>
+<blockquote>
+<div>Re     &lt;= 3*10^7 [-]</div></blockquote>
+<p>29.3   &lt;=     Nu     &lt;= 40.6   [-]
+82     &lt;=   rho_f    &lt;= 318    [kg/m^3]
+0      &lt;=      t     &lt;= 120    [min]</p>
+</div></blockquote>
+<p>..math:</p>
+<dl class="docutils">
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate Temperature [C]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Melting-point Temperature of water-ice [C]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost Temperature [C]</dd>
+<dt>pv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Partial vapor pressure of the air [-]</dd>
+<dt>psat <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air [%]</dd>
+<dt>psatf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air at the frost surface temperature [-]</dd>
+<dt>kice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice thermal conductivity (kJ/kg*K)</dd>
+<dt>pice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice density (kg/m^3)</dd>
+</dl>
+<p>isv : float</p>
+<dl class="docutils">
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Hermes, C.J., 2012. An analytical solution to the problem of frost growth
+and densification on flat surfaces. Int. J. Heat Mass Transf. 55 (23-24), 7346-7351.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Lee</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness, z, according to the Lee (1997) correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Tw     = -15   [C],
+Ta     = 25    [C],</div></blockquote>
+<p>50   &lt;= RH    &lt;= 80    [%],
+6000 &lt;= Re    &lt;= 50000 [-],
+50   &lt;= rho_f &lt;= 400   [kg/m^3],
+0    &lt;= t     &lt;= 120   [min]</p>
+</div></blockquote>
+<p>..math:</p>
+<dl class="docutils">
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate Temperature [C]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Melting-point Temperature of water-ice [C]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost Temperature [C]</dd>
+<dt>pv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Partial vapor pressure of the air [-]</dd>
+<dt>psat <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air [%]</dd>
+<dt>psatf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air at the frost surface temperature [-]</dd>
+<dt>kice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice thermal conductivity (kJ/kg*K)</dd>
+<dt>pice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice density (kg/m^3)</dd>
+</dl>
+<p>isv : float</p>
+<dl class="docutils">
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>rho : Frost density [kg/m^3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Lee, K.-S., Kim, W.-S. Lee, T.-H., 1997. A one-dimensional model for 
+frost formation on a cold surface. Int. J. Heat Mass Transf. 40, 4359-4365.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Okoroafor</code><span class="sig-paren">(</span><em>b0</em>, <em>b1</em>, <em>t</em>, <em>n</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Schneider</code><span class="sig-paren">(</span><em>Tf</em>, <em>Tm</em>, <em>Tw</em>, <em>k_i</em>, <em>hsub</em>, <em>rho_i</em>, <em>t</em>, <em>p</em>, <em>pfsat</em>, <em>psat</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness, z, according to Schneider et. al (1978) correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div>-30  &lt;= Tw &lt;= -5    [C],
+5    &lt;= Ta &lt;= 15    [C], 
+96   &lt;= RH &lt;- 99    [%],
+4000 &lt;= Re &lt;= 32000 [-],
+60   &lt;= t  &lt;= 480   [min]</div></blockquote>
+<p>..math:</p>
+<dl class="docutils">
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air Temperature [C]</dd>
+<dt>Tw <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate Temperature [C]</dd>
+<dt>Tm <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Melting-point Temperature of water-ice [C]</dd>
+<dt>Tf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Frost Temperature [C]</dd>
+<dt>pv <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Partial vapor pressure of the air [-]</dd>
+<dt>psat <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air [%]</dd>
+<dt>psatf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Vapor pressure of saturated air at the frost surface temperature [-]</dd>
+<dt>kice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice thermal conductivity (kJ/kg*K)</dd>
+<dt>pice <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Ice density (kg/m^3)</dd>
+</dl>
+<p>isv : float</p>
+<dl class="docutils">
+<dt>t <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Time [s]</dd>
+</dl>
+<p>z : Frost thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Schneider, H.W., 1978. Equation of the growth rate of frost forming on
+cooled surfaces. Int. J. Heat Mass Trasnfer. 21 (8), 1019-1024.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Sengupta</code><span class="sig-paren">(</span><em>d</em>, <em>Re</em>, <em>Pr</em>, <em>w</em>, <em>Fo</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness according to the Sengupta et al. correlation
+for a cylinder in cross-flow, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 29   [C]</div></blockquote>
+<p>1.5  &lt;= V &lt;= 4.4  [m/s]
+10.0 &lt;= w &lt;= 20.0 [g/kg_a]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 0.84 * d * Re**-0.15 * Pr**0.65 * (1+w)**0.71 * Fo**0.11</dd>
+</dl>
+<dl class="docutils">
+<dt>d <span class="classifier-delimiter">:</span> <span class="classifier">float </span></dt>
+<dd>cylinder diameter [m]</dd>
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Pr <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Prandtl number [-]</dd>
+<dt>w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Relative Humidity [%]</dd>
+<dt>Fo <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Fourier number [-]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Segupta S, Sherif SA, Wong KV. Empirical heat transfer and frost thickness
+correlations during frost deposition on a cylinder in cross-flow in the 
+transient regime. Int J Energy Research 1998;615-24.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">frostypy.thickness.</code><code class="descname">Yang</code><span class="sig-paren">(</span><em>Re</em>, <em>Fo</em>, <em>w</em>, <em>Ta</em>, <em>Ttp</em>, <em>Tp</em>, <em>L</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates the frost thickness according to the Yang et al. correlation
+for a flat plate, which is valid for:</p>
+<blockquote>
+<div><blockquote>
+<div>Ta = 21  [C],</div></blockquote>
+<p>1.3 &lt;= V  &lt; 5.3 [m/s],
+7.5 &lt;= w  &lt; 15  [g/kg_a],
+-30 &lt;= Tp &lt; -5  [C],
+0   &lt;= t  &lt; 200 [min]</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>y_f = 2.878 * (Re**0.193) * (Fo**0.573) * (w**1.738) * (T**-1.029)</dd>
+</dl>
+<dl class="docutils">
+<dt>Re <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Reynolds number [-]</dd>
+<dt>Fo <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Fourier number [-]</dd>
+<dt>w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Absolute humidity [kg_w/kg_air]</dd>
+<dt>Ta <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Air temperature [C]</dd>
+<dt>Tp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Plate temperature [C]</dd>
+<dt>Ttp <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Triple point of water [C]</dd>
+<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>plate length [m]</dd>
+</dl>
+<p>y_f : Frost Thickness [m]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>..[1] Yang, D.-K., Lee, K-S., 2004. Dimensionless correlations of frost
+properties on a cold plate. Int J. Refrigeration 27 (1), 89-96.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-frostypy">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-frostypy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="frostypy.main">
+<code class="descclassname">frostypy.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#frostypy.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for the application script</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">frostypy package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-frostypy.core">frostypy.core module</a><ul>
+<li><a class="reference internal" href="#dimensionless-numbers">Dimensionless Numbers</a></li>
+<li><a class="reference internal" href="#dimensions">Dimensions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-frostypy.density">frostypy.density module</a><ul>
+<li><a class="reference internal" href="#density-correlations">Density Correlations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-frostypy.porosity">frostypy.porosity module</a><ul>
+<li><a class="reference internal" href="#porosity">Porosity</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-frostypy.thermal_conductivity">frostypy.thermal_conductivity module</a><ul>
+<li><a class="reference internal" href="#thermal-conductivity">Thermal Conductivity</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-frostypy.thickness">frostypy.thickness module</a><ul>
+<li><a class="reference internal" href="#frost-thickness">Frost Thickness</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-frostypy">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="previous chapter">frostypy</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/frostypy.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="frostypy"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">frostypy 0.0.18 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >frostypy</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Nick Truster.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
